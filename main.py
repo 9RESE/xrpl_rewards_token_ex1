@@ -11,21 +11,26 @@ from xrpl.models.requests import NFTInfo
 from xrpl.models.amounts import IssuedCurrencyAmount
 from xrpl.ledger import get_latest_validated_ledger_sequence
 
+# cult lp 8EAB...15F
 cult_amm_addr = 'rwyUJtAL1pAUhSnoNhuWm4edjTanGUyvFH'
-cult_cc = '038EABD664A70E5C3B449AADDBECD8811A56A15F'
+cult_cc = '43554C5400000000000000000000000000000000' # ?????
+cult_lp_cc = '038EABD664A70E5C3B449AADDBECD8811A56A15F'
 cult_amm_locked_addr = 'rCULtAKrKbQjk1Tpmg5hkw4dpcf9S9KCs'
 cult_actions_db = 'public.cult_actions'
 cult_probation_db = 'public.cult_probation'
 cult_sent_db = 'public.cult_sent'
 cult_daily_record_db = 'public.cult_daily_record'
 
+# obey lp 57CA...8DF
 obey_amm_addr = 'rp3KykYebksKDX1GPdMWTBwjiGjLmTgWxq'
-obey_cc = '0357CAA44054A751802BA9128DF6D50915FE88DF'
+obey_lp_cc = '0357CAA44054A751802BA9128DF6D50915FE88DF'
 obey_amm_locked_addr = 'robeyK1nxGh6AKUSSXf3eqyigAWS6Frmw'
 obey_actions_db = 'public.obey_actions'
 obey_probation_db = 'public.obey_probation'
 obey_sent_db = 'public.obey_sent'
 obey_daily_record_db = 'public.obey_daily_record'
+
+rewards_from_wallet = 'rD56CsTcywRJqtcxJEyJ2QSSY7ZiBZJPzym'
 
 cult_lp_trustlines = []
 cult_transactions = []
@@ -50,9 +55,6 @@ conn = psycopg2.connect(
     host=DB_HOST
 )
 cur = conn.cursor()
-
-def not_locked_addresses(address):
-    return address != obey_amm_locked_addr and address != cult_amm_locked_addr
 
 def amm_daily_wallets(address, currency_code, trust_list, db_table, ticker):
     request = AccountLines(
@@ -93,11 +95,19 @@ def amm_daily_transactions(account, trans_list, ticker):
     )
     response = client.request(account_tx)
     if response.is_successful():
-        with open(LOCAL_PATH +'responses/'+ ticker+'Transactions.json', 'w') as json_file:
-            json.dump(response.result, json_file, indent=4)
-            json_file.close()
-        # transactions = response.result.get("transactions", [])
-        # for tx in transactions:
+        # with open(LOCAL_PATH +'responses/'+ ticker+'Transactions.json', 'w') as json_file:
+        #     json.dump(response.result, json_file, indent=4)
+        #     json_file.close()
+        transactions = response.result.get("transactions", [])
+        for tx in transactions:
+            if tx['tx_json']['TransactionType'] != 'OfferCreate' and tx['tx_json']['TransactionType'] != 'TrustSet':
+                if tx['tx_json']['TransactionType'] == 'Payment':
+                    affected_nodes = tx['meta']['AffectedNodes']
+                    node1 = affected_nodes[2]
+                    receiving_wallet = node1['ModifiedNode']['FinalFields']['Account']
+                    receiving_wallet_final
+                    print(tx)
+                    print()
             # find wallet of transaction
             # find type of transaction in or out
             # find amount of xrp, cult/obey, and lp token was exchanged
@@ -114,12 +124,12 @@ def amm_daily_transactions(account, trans_list, ticker):
     
 
 # get daily record of wallet holdings
-amm_daily_wallets(cult_amm_addr, cult_cc, cult_lp_trustlines, cult_daily_record_db, 'cult')
-amm_daily_wallets(obey_amm_addr, obey_cc, obey_lp_trustlines, obey_daily_record_db, 'obey')
+# amm_daily_wallets(cult_amm_addr, cult_lp_cc, cult_lp_trustlines, cult_daily_record_db, 'cult')
+# amm_daily_wallets(obey_amm_addr, obey_lp_cc, obey_lp_trustlines, obey_daily_record_db, 'obey')
 
 # get daily transactions
 amm_daily_transactions(cult_amm_addr, cult_transactions, 'cult')
-amm_daily_transactions(obey_amm_addr, obey_transactions, 'obey')
+# amm_daily_transactions(obey_amm_addr, obey_transactions, 'obey')
 
 # check probation for expired probation
 # if wallet is not in probation send obey lp to eligible cult lp holders

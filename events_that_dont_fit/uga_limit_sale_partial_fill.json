@@ -1,0 +1,183 @@
+{
+    "transaction": {
+        "Account": "rhubarbMVC2nzASf3qSGQcUKtLnAzqcBjp",
+        "Amount": {
+            "currency": "UGA",
+            "issuer": "rBFJGmWj6YaabVCxfsjiCM8pfYXs8xFdeC",
+            "value": "0.6266527589852335"
+        },
+        "Destination": "rhubarbMVC2nzASf3qSGQcUKtLnAzqcBjp",
+        "Fee": "10",
+        "Flags": 131072,
+        "LastLedgerSequence": 93999934,
+        "SendMax": "53760",
+        "Sequence": 94725920,
+        "SigningPubKey": "ED9C7A917E06AE3550AEA072D25D3EAABDBB8D6AC1A1C0AF316866082D10145FF6",
+        "TransactionType": "Payment",
+        "TxnSignature": "D50C1ED079ED88F5D032554FC42581572610806361524627DF53B1FE126F55F126948318DF19280482EBA7048DBBBE510A0B5A6D8FFE561BCF200A331424F507",
+        "hash": "0DBBA6CF42631B5F6B407805FE358352FA1DF3B774C347CE522F7ADA578DEF75",
+        "DeliverMax": {
+            "currency": "UGA",
+            "issuer": "rBFJGmWj6YaabVCxfsjiCM8pfYXs8xFdeC",
+            "value": "0.6266527589852335"
+        },
+        "date": 792307241
+    },
+    "meta": {
+        "AffectedNodes": [
+            {
+                "ModifiedNode": {
+                    "FinalFields": {
+                        "Balance": {
+                            "currency": "UGA",
+                            "issuer": "rrrrrrrrrrrrrrrrrrrrBZbvji",
+                            "value": "0.6266527589852335"
+                        },
+                        "Flags": 1114112,
+                        "HighLimit": {
+                            "currency": "UGA",
+                            "issuer": "rBFJGmWj6YaabVCxfsjiCM8pfYXs8xFdeC",
+                            "value": "0"
+                        },
+                        "HighNode": "39",
+                        "LowLimit": {
+                            "currency": "UGA",
+                            "issuer": "rhubarbMVC2nzASf3qSGQcUKtLnAzqcBjp",
+                            "value": "9999999999999999e80"
+                        },
+                        "LowNode": "95"
+                    },
+                    "LedgerEntryType": "RippleState",
+                    "LedgerIndex": "1C9C80D6CBD3354CD72EF053680B201504052BEC9C175D7F7F3699A8D66538E5",
+                    "PreviousFields": {
+                        "Balance": {
+                            "currency": "UGA",
+                            "issuer": "rrrrrrrrrrrrrrrrrrrrBZbvji",
+                            "value": "0"
+                        }
+                    },
+                    "PreviousTxnID": "0C572E3C06ECA62F81139D69A411E768BE86ECBC7C7656D205A3D81256AA6C8C",
+                    "PreviousTxnLgrSeq": 93999342
+                }
+            },
+            {
+                "ModifiedNode": {
+                    "FinalFields": {
+                        "Balance": {
+                            "currency": "UGA",
+                            "issuer": "rrrrrrrrrrrrrrrrrrrrBZbvji",
+                            "value": "-1.453375857122066"
+                        },
+                        "Flags": 2228224,
+                        "HighLimit": {
+                            "currency": "UGA",
+                            "issuer": "rJhXhcgHvBcsdr2N7aBES9Fj9GkqWEakFm",
+                            "value": "1000000000000000e-4"
+                        },
+                        "HighNode": "0",
+                        "LowLimit": {
+                            "currency": "UGA",
+                            "issuer": "rBFJGmWj6YaabVCxfsjiCM8pfYXs8xFdeC",
+                            "value": "0"
+                        },
+                        "LowNode": "e"
+                    },
+                    "LedgerEntryType": "RippleState",
+                    "LedgerIndex": "5E7F7F3C2519E9131659FC4B940E193C7B05DAE808323F1275B9F442A0ABC03A",
+                    "PreviousFields": {
+                        "Balance": {
+                            "currency": "UGA",
+                            "issuer": "rrrrrrrrrrrrrrrrrrrrBZbvji",
+                            "value": "-2.0800286161073"
+                        }
+                    },
+                    "PreviousTxnID": "9FEB88C704368084BE1D8D9674F06F68055B643D4E001E67EB5077E3D163F117",
+                    "PreviousTxnLgrSeq": 93986687
+                }
+            },
+            {
+                "ModifiedNode": {
+                    "FinalFields": {
+                        "Account": "rJhXhcgHvBcsdr2N7aBES9Fj9GkqWEakFm",
+                        "Balance": "101357292",
+                        "Flags": 0,
+                        "OwnerCount": 185,
+                        "Sequence": 90394879
+                    },
+                    "LedgerEntryType": "AccountRoot",
+                    "LedgerIndex": "63192217B57A818DDE149DEF42C70376994A6CB0931EFD2600A65E98812B7676",
+                    "PreviousFields": {
+                        "Balance": "101306219"
+                    },
+                    "PreviousTxnID": "E7229AF1864A2D6F3E246EFAF92FC911819FFE343BB6972EA597E7D12D58632E",
+                    "PreviousTxnLgrSeq": 93999559
+                }
+            },
+            {
+                "ModifiedNode": {
+                    "FinalFields": {
+                        "Account": "rhubarbMVC2nzASf3qSGQcUKtLnAzqcBjp",
+                        "Balance": "4269653031",
+                        "Flags": 0,
+                        "OwnerCount": 1208,
+                        "Sequence": 94725921
+                    },
+                    "LedgerEntryType": "AccountRoot",
+                    "LedgerIndex": "7A794B5256B0129A726B10E003DC3EF737C4FB00216A74A2560B0B544D702136",
+                    "PreviousFields": {
+                        "Balance": "4269704114",
+                        "Sequence": 94725920
+                    },
+                    "PreviousTxnID": "DFEB847631FDB35FD0E5CC37A4EF9ADA9315CD386A5B0D43083DB29808C97040",
+                    "PreviousTxnLgrSeq": 93999933
+                }
+            },
+            {
+                "ModifiedNode": {
+                    "FinalFields": {
+                        "Account": "rJhXhcgHvBcsdr2N7aBES9Fj9GkqWEakFm",
+                        "BookDirectory": "60EF7250F62F000872F7126D455F01858773A8C2EE8C7A6D591CF461BEEB6000",
+                        "BookNode": "0",
+                        "Flags": 131072,
+                        "OwnerNode": "12",
+                        "Sequence": 90394878,
+                        "TakerGets": {
+                            "currency": "UGA",
+                            "issuer": "rBFJGmWj6YaabVCxfsjiCM8pfYXs8xFdeC",
+                            "value": "0.3733472410147665"
+                        },
+                        "TakerPays": "30427"
+                    },
+                    "LedgerEntryType": "Offer",
+                    "LedgerIndex": "ECA5C76727B7498DE7AD4E483309EE9DCC76DCE18E9FA660ABCBB6F034E95710",
+                    "PreviousFields": {
+                        "TakerGets": {
+                            "currency": "UGA",
+                            "issuer": "rBFJGmWj6YaabVCxfsjiCM8pfYXs8xFdeC",
+                            "value": "1"
+                        },
+                        "TakerPays": "81500"
+                    },
+                    "PreviousTxnID": "E7229AF1864A2D6F3E246EFAF92FC911819FFE343BB6972EA597E7D12D58632E",
+                    "PreviousTxnLgrSeq": 93999559
+                }
+            }
+        ],
+        "TransactionIndex": 48,
+        "TransactionResult": "tesSUCCESS",
+        "delivered_amount": {
+            "currency": "UGA",
+            "issuer": "rBFJGmWj6YaabVCxfsjiCM8pfYXs8xFdeC",
+            "value": "0.6266527589852335"
+        }
+    },
+    "type": "transaction",
+    "validated": true,
+    "status": "closed",
+    "close_time_iso": "2025-02-08T05:20:41Z",
+    "ledger_index": 93999933,
+    "ledger_hash": "926DA77C87221E89D5E3124C8E6F3A231DBD751869DC215D682C1394344EB6EF",
+    "engine_result_code": 0,
+    "engine_result": "tesSUCCESS",
+    "engine_result_message": "The transaction was applied. Only final in a validated ledger."
+}

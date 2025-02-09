@@ -1,0 +1,70 @@
+{
+    "transaction": {
+        "Account": "rJxKV9e9p6wiPwxrJ4X1n98LosPL1sgcJW",
+        "Amount": "1",
+        "Destination": "rJhXhcgHvBcsdr2N7aBES9Fj9GkqWEakFm",
+        "Fee": "11",
+        "Flags": 0,
+        "LastLedgerSequence": 93955401,
+        "Sequence": 95802058,
+        "SigningPubKey": "ED215957999B7E7FBE9C50CF31155C40CAD1FB821CDC655CB14BDCAAFC8FE674CC",
+        "TransactionType": "Payment",
+        "TxnSignature": "EAA4B70EB3B14AA0C47C6D345B6AA78C265A7A62394960C83619BF5A63D56F5799697F51D00CE3E010809B7ACC1C8085CADA2FE3E225C897F8EF712F3DABAE02",
+        "hash": "ED3BE990DDBBD20CDF4BDA294ECD431584A52564F79ECE3D7AB3103D9ADF0BE8",
+        "DeliverMax": "1",
+        "date": 792134252
+    },
+    "meta": {
+        "AffectedNodes": [
+            {
+                "ModifiedNode": {
+                    "FinalFields": {
+                        "Account": "rJxKV9e9p6wiPwxrJ4X1n98LosPL1sgcJW",
+                        "Balance": "99628779",
+                        "Flags": 0,
+                        "OwnerCount": 0,
+                        "Sequence": 95802059
+                    },
+                    "LedgerEntryType": "AccountRoot",
+                    "LedgerIndex": "421DBC40A6D3E7AEC4A8F5663B95900F30072A2FC909233FC8DAF7BDC28BD01C",
+                    "PreviousFields": {
+                        "Balance": "99628791",
+                        "Sequence": 95802058
+                    },
+                    "PreviousTxnID": "D4278A784440D23F6021EB1217AEE14F30FC130CEA43384578A9A2985FC738FE",
+                    "PreviousTxnLgrSeq": 93955300
+                }
+            },
+            {
+                "ModifiedNode": {
+                    "FinalFields": {
+                        "Account": "rJhXhcgHvBcsdr2N7aBES9Fj9GkqWEakFm",
+                        "Balance": "52158899",
+                        "Flags": 0,
+                        "OwnerCount": 210,
+                        "Sequence": 90394813
+                    },
+                    "LedgerEntryType": "AccountRoot",
+                    "LedgerIndex": "63192217B57A818DDE149DEF42C70376994A6CB0931EFD2600A65E98812B7676",
+                    "PreviousFields": {
+                        "Balance": "52158898"
+                    },
+                    "PreviousTxnID": "EBBA4E709B2AFEF6B9E2FC83899A38AE7D09557FCCD5ECB9755BB783DEC6CC4D",
+                    "PreviousTxnLgrSeq": 93955296
+                }
+            }
+        ],
+        "TransactionIndex": 0,
+        "TransactionResult": "tesSUCCESS",
+        "delivered_amount": "1"
+    },
+    "type": "transaction",
+    "validated": true,
+    "status": "closed",
+    "close_time_iso": "2025-02-06T05:17:32Z",
+    "ledger_index": 93955302,
+    "ledger_hash": "5AF5906FD7E4FA378E5295F2B32FCF613F3AE99E0F79BCFDEA637CC15C40AD15",
+    "engine_result_code": 0,
+    "engine_result": "tesSUCCESS",
+    "engine_result_message": "The transaction was applied. Only final in a validated ledger."
+}
