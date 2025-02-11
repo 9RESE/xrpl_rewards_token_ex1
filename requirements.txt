@@ -1,0 +1,4 @@
+psycopg2-binary
+xrpl-py
+websockets
+python-dotenv

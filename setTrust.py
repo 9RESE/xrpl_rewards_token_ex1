@@ -1,6 +1,10 @@
 import xrpl
 from xrpl.wallet import Wallet
+import os
+import dotenv
+dotenv.load_dotenv()
 
+wallet_name = 'CULT_OBEY'
 cult_token = {
     'token_issuer': 'rCULtAKrKbQjk1Tpmg5hkw4dpcf9S9KCs',
     'cc': '43554C5400000000000000000000000000000000',
@@ -22,9 +26,6 @@ tokens = [cult_token, obey_token]
 JSON_RPC_URL = "https://s2.ripple.com:51234/"
 client = xrpl.clients.JsonRpcClient(JSON_RPC_URL)
 
-w1 = w1 = Wallet.from_seed('sEdVW6UfrdigkCCw17aVMeSaiERRiNT')
-
-
 def submit_and_wait(tx):
     try:
         resp = xrpl.transaction.submit_and_wait(tx, client, w1)
@@ -35,12 +36,13 @@ def submit_and_wait(tx):
         print("submit_and_wait err", e)
     return err_msg
 
-
+WALLET_SEED = os.getenv(f'{wallet_name}_SEED')
+w1 = Wallet.from_seed(WALLET_SEED)
 for c in tokens:
     try:
         trust_set = xrpl.models.transactions.TrustSet(
             account=w1.classic_address,
-            flags=131072,
+            flags=131072, # disables RIPPELING
             limit_amount=xrpl.models.amounts.IssuedCurrencyAmount(
                 currency=c['cc'],
                 issuer=c['token_issuer'],
@@ -51,7 +53,7 @@ for c in tokens:
 
         trust_set = xrpl.models.transactions.TrustSet(
             account=w1.classic_address,
-            flags=131072,
+            flags=131072, # disables RIPPELING
             limit_amount=xrpl.models.amounts.IssuedCurrencyAmount(
                 currency=c['amm_cc'],
                 issuer=c['lp_issuer'],
@@ -61,3 +63,4 @@ for c in tokens:
         submit_and_wait(trust_set)
     except Exception as e:
         print(f'set_trust_line {c['token_issuer']} error: {e}')
+############## Now send Cult LP tokens and Obey tokens to the wallet {w1.classic_address} then start the m3.py script.##############
