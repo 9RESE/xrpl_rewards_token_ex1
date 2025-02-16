@@ -62,7 +62,6 @@ amm_list = [cult_token['amm_cc'], obey_token['amm_cc']]
 
 JSON_RPC_URL = "https://s2.ripple.com:51234/"
 WS_URL = "wss://s2.ripple.com:51233" 
-JSON_RPC_URL = "https://s2.ripple.com:51234/"
 
 COLD_NUM = os.getenv('COLD_NUM') # XUMM Wallets
 COLD_ADDR = os.getenv('COLD_ADDR') # XUMM Wallets
